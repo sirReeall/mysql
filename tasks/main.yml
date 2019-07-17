@@ -9,3 +9,28 @@
      - mysql-community-server
      - mysql-community-client
      - MySQL-python
+
+- name: Change password policy (validate_password plugin)
+  lineinfile:
+    path: /etc/my.cnf
+    state: present
+    insertafter: EOF
+    line: 'plugin-load-add=validate_password.so'
+
+- name: Change password policy (validate_password_policy LOW)
+  lineinfile:
+    path: /etc/my.cnf
+    state: present
+    insertafter: EOF
+    line: 'validate_password_policy=LOW'
+
+- name: Increase max connections
+  lineinfile:
+    path: /etc/my.cnf
+    state: present
+    insertafter: EOF
+    line: 'max_connections=300'
+
+- name: Start the MySQL service
+  service: name=mysqld state=started enabled=true
+  register: mysql_start
