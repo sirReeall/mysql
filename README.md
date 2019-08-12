@@ -5,7 +5,9 @@ Ansible role for installing mysql.
 
 Currently this will only install mysql 5.7 using yum.
 
-This also adjust the password policy to LOW.
+MySQL Password Validate Plugin is installed by default. This is done using my.cnf file.
+
+The validate_password_policy is set to LOW. This is also done using my.cnf file.
 
 Requirements
 ------------
