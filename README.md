@@ -19,7 +19,7 @@ None
 Role Variables
 --------------
 
-Everything is currently hardcodes and no variables are exposed
+Everything is currently hardcoded and no variables are exposed
 
 Dependencies
 ------------
