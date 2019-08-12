@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sirReeall/mysql.svg?branch=master)](https://travis-ci.org/sirReeall/mysql)
+
 mysql
 =========
 
