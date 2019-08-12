@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/sirReeall/mysql.svg?branch=master)](https://travis-ci.org/sirReeall/mysql)
-
 mysql
 =========
+
+[![Build Status](https://travis-ci.org/sirReeall/mysql.svg?branch=master)](https://travis-ci.org/sirReeall/mysql)
 
 Ansible role for installing mysql.
 
