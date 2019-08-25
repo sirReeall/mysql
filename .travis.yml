@@ -1,8 +1,4 @@
 ---
-# Based on Jeff Geerling's testing
-# For example:
-# https://github.com/geerlingguy/ansible-role-kibana/blob/master/.travis.yml
-
 language: python
 services: docker
 
@@ -17,14 +13,7 @@ install:
   - pip install molecule docker
 
 before_script:
-  # Use actual Ansible Galaxy role name for the project directory.
-  - cd ../
-  - mv $ROLE_NAME sirreeall.$ROLE_NAME
-  - cd sirreeall.$ROLE_NAME
 
 script:
   # Run tests.
   - molecule test
-
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/

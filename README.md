@@ -19,7 +19,9 @@ None
 Role Variables
 --------------
 
-Everything is currently hardcoded and no variables are exposed
+| Name | Default | Remarks |
+| --- | --- | --- |
+| mysql_root_password | alfresco.123 | Password for root@localhost account |
 
 Dependencies
 ------------
