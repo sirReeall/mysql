@@ -19,3 +19,11 @@
 - debug:
     msg: "{{ password_reset }}"
     verbosity: 1
+
+- name: inject my.cnf file for new root password
+  template:
+    src: "my.cnf.j2"
+    dest: "/root/.my.cnf"
+    owner: root
+    group: root
+    mode: 0600
