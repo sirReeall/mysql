@@ -41,25 +41,5 @@
   service: name=mysqld state=started enabled=true
 
 - name: "reset root@localhost password"
-  block:
-    - name: get password from log file
-      shell: |
-        awk '$0 ~ "temporary password" {print $11}' /var/log/mysqld.log
-      register: password_from_logs
-      changed_when: false
-
-    - debug:
-        msg: "mysql root@localhost password from logs is:
-            / {{ password_from_logs.stdout }}"
-        verbosity: 1
-
-    - name: change password
-      shell: |
-        mysql -uroot -p'{{ password_from_logs.stdout }}' --connect-expired-password -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ mysql_root_password }}';  flush privileges; "
-      register: password_reset
-      changed_when: false
-
-    - debug:
-        msg: "{{ password_reset }}"
-        verbosity: 1
+  include_tasks: reset_root_pwd.yml
   when: installed_packages.changed
