@@ -1,0 +1,3 @@
+---
+# Default values for mysql role
+mysql_root_password: "alfresco.123"
